@@ -1,17 +1,16 @@
 import nltk
-from nltk.tokenize import word_tokenize
+from nltk.tokenize import sent_tokenize
 
 # Download the tokenizer model the first time
 nltk.download("punkt")
 nltk.download("punkt_tab")
 
 text = """
-Dr. Smith can't attend today's NLP meeting.
-The state-of-the-art system achieved 97.5%.
-Visit https://www.example.org for details.
+Dr. Smith works at the University of Verona. He studies NLP.
+The experiment used version 3.14. Was it successful? Yes, it was!
 """
 
-tokens = word_tokenize(text)
+sentences = sent_tokenize(text)
 
-for token in tokens:
-    print(token)
+for i, sentence in enumerate(sentences, start=1):
+    print(i, sentence)
